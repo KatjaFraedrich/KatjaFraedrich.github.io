@@ -12,10 +12,12 @@ window.addEventListener('resize', () => {
     onWindowResize(); // your function?
     });
 // Renderer
-const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector('canvas.webgl'),
-    alpha:true
-})
+const renderer = new THREE.WebGLRenderer(
+    //{
+    //canvas: document.querySelector('canvas.webgl'),
+    //alpha:true
+    //}
+)
 renderer.setSize(width, height);
 
 document.body.appendChild( renderer.domElement );
@@ -28,7 +30,7 @@ scene.add(camera)
 
 
 const clock=new THREE.Clock()
-
+//Parameters that can be modified.
 
 
 //renderer.setClearColor( 0x000000, 0 ); // 
@@ -39,10 +41,9 @@ const controls = new OrbitControls( camera, renderer.domElement );
 
 
 
-
-
 // Object
-const geometry = new THREE.BoxGeometry(16, 16, 16,16,16,16)
+const geometry = new THREE.BoxGeometry(1.0, 1.0, 1.0);
+geometry.doubleSided = true;
 const newMaterial= new THREE.MeshStandardMaterial({ color: 0xff0000 ,wireframe:true})
 const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 const uniformData={
@@ -127,4 +128,6 @@ function onWindowResize() {
     render();
 
 }
+
+
 
