@@ -1,0 +1,6 @@
+push changes 
+run npm run deploy
+
+
+->put everything that needs to be loaded (images etc) in the dist folder (not in static folder)
+for better organization can create "asset" folder in dist and ref images with “./assets/yourimage1.png”.
