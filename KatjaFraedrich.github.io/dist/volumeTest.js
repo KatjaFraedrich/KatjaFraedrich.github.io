@@ -5,7 +5,7 @@ import * as THREE from './js/three.module.js'//'https://unpkg.com/three@0.127.0/
 import { GUI } from 'https://unpkg.com/three@0.127.0/examples/jsm/libs/dat.gui.module.js';
 import { DragControls } from 'https://unpkg.com/three@0.127.0/examples/jsm/controls/DragControls.js';
 import { NRRDLoader } from 'https://unpkg.com/three@0.127.0/examples/jsm/loaders/NRRDLoader.js';
-import { VolumeRenderShader1 } from 'https://unpkg.com/three@0.127.0/examples/jsm/shaders/VolumeShader.js';
+import { VolumeRenderShader1 } from './volumeShader.js'//'https://unpkg.com/three@0.127.0/examples/jsm/shaders/VolumeShader.js';
 //import WebGL from 'three/addons/capabilities/WebGL.js';
 
 /*if ( WebGL.isWebGL2Available() === false ) {
@@ -15,7 +15,7 @@ import { VolumeRenderShader1 } from 'https://unpkg.com/three@0.127.0/examples/js
 }*/
 
 let response = await fetch(
-    'http://127.0.0.1:5000/density',
+    'http://127.0.0.1:5000/density10K',
     {
        method: 'GET',
        
@@ -201,7 +201,7 @@ function init() {
 
         const xLength=100;
         const yLength=100;
-        const zLength=929;
+        const zLength=96;//929;
         
         const typedArray1 = new Float32Array(xLength*yLength*zLength);
         for (let i=0;i<typedArray1.length;i++){
