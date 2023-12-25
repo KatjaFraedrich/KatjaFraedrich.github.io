@@ -65,6 +65,9 @@ body {
 canvas {
 	display: block;
 }
+#gui_slice {
+    float:right;
+}
 
 
   
